@@ -1,0 +1,14 @@
+<package>
+  <description brief="neo_2dnav_slam_mpo_500">
+
+     neo_2dnav_slam_mpo_500
+
+  </description>
+  <author>neobotix</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/neo_2dnav_slam_mpo_500</url>
+
+</package>
+
+

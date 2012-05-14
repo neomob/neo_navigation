@@ -1,0 +1,7 @@
+<launch>
+	<node pkg="tf" type="static_transform_publisher" name="map_to_base" args="0.0 0.0 0.0 0 0 0.0 /odom /wheelodom 100"/>
+	<node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen">
+		<remap from="scan" to="/sick_s300/scan"/>
+		<remap from="odom" to="/base_controller/odometry"/>
+	</node>
+</launch>

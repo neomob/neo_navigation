@@ -1,0 +1,14 @@
+<package>
+  <description brief="neo_2dnav_slam_mpo_700">
+
+     neo_2dnav_slam_mpo_700
+
+  </description>
+  <author>mob</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/neo_2dnav_slam_mpo_700</url>
+  <depend package="gmapping"/>
+</package>
+
+

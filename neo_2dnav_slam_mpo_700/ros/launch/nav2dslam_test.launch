@@ -1,0 +1,20 @@
+<launch>
+
+  <!--- Run gmapping (map and transform: odom <-> map ) -->
+  <include file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_gmapping.launch" />
+ <node pkg="tf" type="static_transform_publisher" name="map_to_base" args="0.0 0.0 0.0 0 0 0.0 /base_footprint /map   100"/>
+ <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0 0 0.0 /wheelodom /odom  100"/>
+
+//geht damit
+ <node pkg="tf" type="static_transform_publisher" name="map_to_base" args="0.0 0.0 0.0 0 0 0.0 /base_footprint /map 100"/>
+
+
+ <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_costmap_common.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_costmap_local.yaml" command="load" />
+    <rosparam file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_costmap_global.yaml" command="load" />
+    <rosparam file="$(find neo_2dnav_slam_mpo_700)/ros/launch/$(env ROBOT)_planer_local.yaml" command="load" />
+  </node>
+
+</launch>
